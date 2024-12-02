@@ -1,25 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUsersCog,
-  faHeadset,
-  faPaintBrush,
-  faChartLine,
-  faArrowRight,
-  faClipboardList,
-  faCogs,
-  faLaptopCode,
-  faShieldAlt,
-  faRocket,
-  faCode,
-  faServer,
-  faPlug,
-  faDatabase,
-  faCodeBranch,
-} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faUsersCog, 
+    faHeadset, 
+    faPaintBrush, 
+    faChartLine, 
+    faArrowRight,
+    faClipboardList,
+    faCogs,
+    faLaptopCode,
+    faShieldAlt,
+    faRocket
+} from '@fortawesome/free-solid-svg-icons';
 import gif from "../assets/gif.gif";
 import ServiceCards from "../Components/ServiceCards";
+import HeroSection from "../Components/HeroSection";
 
 const ProcessCard = ({ step, index }) => {
   return (
@@ -61,45 +57,14 @@ const ProcessCard = ({ step, index }) => {
 
       {/* Header */}
       <div className="relative z-10 space-y-3">
-        <div className="absolute flex items-center justify-center w-full h-full">
-          <div className="relative flex flex-wrap justify-center items-center animate-orbit">
-            <div className="orbit-1 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faCode} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">HTML</span>
-            </div>
-            <div className="orbit-2 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faServer} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">CSS</span>
-            </div>
-            <div className="orbit-3 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faPlug} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">JAVA SCRIPT</span>
-            </div>
-            <div className="orbit-4 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faDatabase} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">PHP</span>
-            </div>
-            <div className="orbit-5 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faCodeBranch} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">NODE.JS</span>
-            </div>
-            <div className="orbit-6 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faCodeBranch} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">EXPRESS.JS</span>
-            </div>
-            <div className="orbit-7 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faCodeBranch} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">MONGODB</span>
-            </div>
-            <div className="orbit-8 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faCodeBranch} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">TAILWIND</span>
-            </div>
-            <div className="orbit-9 flex items-center space-x-2 p-2 border-2 border-blue-500 rounded-full bg-white shadow-md m-2">
-              <FontAwesomeIcon icon={faCodeBranch} className="text-blue-500" />
-              <span className="text-blue-500 font-semibold">WORDPRESS</span>
-            </div>
-          </div>
+        <div className="flex items-center space-x-4">
+          <FontAwesomeIcon 
+            icon={step.icon} 
+            className="text-3xl md:text-4xl text-white/80"
+          ></FontAwesomeIcon>
+          <h3 className="text-xl md:text-2xl font-bold tracking-tight">
+            {step.title}
+          </h3>
         </div>
 
         <p className="text-xs md:text-sm opacity-80 leading-relaxed">
@@ -242,47 +207,6 @@ const BackgroundAnimation = () => {
 };
 
 const Home = () => {
-  const [displayText, setDisplayText] = useState("");
-  const fullText = "RAM WEB SOLUTION";
-
-  useEffect(() => {
-    let currentText = "";
-    let index = 0;
-    let isTyping = true;
-
-    const typeWriter = () => {
-      if (isTyping) {
-        if (index < fullText.length) {
-          currentText += fullText[index];
-          setDisplayText(currentText);
-          index++;
-          setTimeout(typeWriter, 200);
-        } else {
-          // Pause after typing full text
-          setTimeout(() => {
-            isTyping = false;
-            setTimeout(resetText, 1000); // Start erasing after a pause
-          }, 1000);
-        }
-      }
-    };
-
-    const resetText = () => {
-      currentText = "";
-      index = 0;
-      isTyping = true;
-      setDisplayText("");
-      typeWriter();
-    };
-
-    typeWriter();
-
-    // Cleanup function to prevent memory leaks
-    return () => {
-      isTyping = false;
-    };
-  }, []);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -428,42 +352,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center justify-center px-4 py-8 md:gap-20 max-w-7xl mx-auto">
-        <div className="mb-8 md:mb-0 flex justify-center">
-          <img
-            src={gif}
-            alt="Pentagon shapes"
-            className="h-[40vh] md:h-[60vh] max-w-full object-contain"
-          />
-        </div>
-        <div className="text-center">
-          <div className="mb-4">
-            <h1 className="text-3xl text-[#034067] font-[Vidaloka] md:text-5xl font-bold animate-bounce">
-              {displayText}
-            </h1>
-            <hr className="border-t-2 border-[#034067] mt-2" />
-          </div>
-          <div className="space-y-2">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2564eb75] ">
-              <span className="text-[#034067]">DESIGNS</span> THAT INSPIRE,
-            </h1>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2564eb75]">
-              <span className="text-[#034067]">FRONTEND</span>
-            </h1>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2564eb75]">
-              THAT DELIVER.
-            </h1>
-          </div>
-          <div className="mt-6 md:mt-8 flex justify-center space-x-4">
-            <button className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
-              TRAINING
-            </button>
-            <button className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
-              INTERNSHIP
-            </button>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
       <section className=" to-blue-600 py-16 md:py-20 text-[#2564eb]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
@@ -777,45 +666,160 @@ const Home = () => {
         </div>
         <BackgroundAnimation />
       </section>
-      <section className="bg-[#034067] flex flex-col md:flex-row items-center justify-center overflow-hidden h-[600px] w-full">
-        <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
-          Software Development Tools
+      <section className="flex flex-col items-center py-12 bg-[#034067] relative overflow-hidden px-4">
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-3 text-[#2564eb] relative z-10 text-center"> 
+          <span className="text-white">Our students are completing </span> internship 
         </h1>
-        <div className="relative flex items-center justify-center w-full h-full">
-          <div className="absolute w-28 h-28 md:w-48 md:h-48 bg-transparent border-4 border-dotted border-[#2564eb] rounded-full flex items-center justify-center">
-            <div className="absolute w-24 h-24 md:w-36 md:h-36 bg-[#2564eb] rounded-full flex items-center justify-center">
-              <div className="absolute w-16 h-16 md:w-16 md:h-16 bg-[#034067] rounded-full flex items-center justify-center">
-                <span className="text-white text-xs md:text-xl font-extrabold text-center">
-                  TECH STACK
-                </span>
-              </div>
+        <div className="h-1 w-24 md:w-96 mb-12 bg-[#2564eb] mx-auto rounded-full relative z-10"></div>
+        
+        <div className="relative w-full max-w-5xl z-20">
+          <div className="flex justify-center items-center relative">
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-4 md:gap-20 relative">
+              {getVisibleInterns().map((intern, index) => (
+                <motion.div 
+                  key={intern.name} 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 300
+                  }}
+                  className={`flex flex-col items-center transition-all duration-500 ease-in-out
+                    ${index === 0 ? 'opacity-100 scale-100 z-10' : 
+                      index === 1 ? 'opacity-75 scale-90 md:-translate-x-4 z-0' : 
+                      index === 2 ? 'opacity-50 scale-80 md:-translate-x-8 z-0' : 
+                      index === 3 ? 'opacity-25 scale-80 md:-translate-x-8 z-0' :
+                      'opacity-25 scale-70 md:-translate-x-12 z-0'}`}
+                >
+                  <div className="relative">
+                    <img 
+                      src={intern.image} 
+                      alt={intern.alt} 
+                      className="rounded-full border-2 border-[#2564eb] 
+                        w-16 h-16 md:w-24 md:h-24 object-cover 
+                        transform transition-transform hover:scale-110"
+                    />
+                    <div className="absolute bottom-0 right-0 bg-[#2564eb] text-white 
+                      rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center 
+                      text-xs md:text-sm font-bold">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <p className="mt-2 font-semibold text-white text-center text-xs md:text-sm">
+                    {intern.name}
+                  </p>
+                  <p className="text-blue-300 text-center text-xs md:text-sm">
+                    {`-${intern.role}-`}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
-          {/* Updated orbit items for better visibility and animation */}
-          {[
-            "HTML",
-            "CSS",
-            "JAVA SCRIPT",
-            "PHP",
-            "NODE.JS",
-            "EXPRESS.JS",
-            "MONGODB",
-            "TAILWIND",
-            "WORDPRESS",
-          ].map((tech, index) => (
-            <div
-              className="orbit "
-              style={{ animationDelay: `${(index + 1) * 1.11}s` }}
-              key={tech}
+          
+          {/* Responsive Navigation Buttons */}
+          <div className="absolute inset-y-0 flex items-center justify-between w-full">
+            <motion.button 
+              onClick={prevSlide} 
+              whileTap={{ scale: 0.9 }}
+              className="hidden md:block bg-white/20 hover:bg-white/40 
+                text-white rounded-full p-2 md:p-3 
+                transform transition-all duration-300 
+                hover:scale-110 focus:outline-none"
             >
-              <span className="text-xs md:text-sm  lg:text-lg text-[#5463ff] font-semibold hover:text-white transition duration-300">
-                {tech}
-              </span>
-            </div>
-          ))}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </motion.button>
+            
+            <motion.button 
+              onClick={nextSlide} 
+              whileTap={{ scale: 0.9 }}
+              className="hidden md:block bg-white/20 hover:bg-white/40 
+                text-white rounded-full p-2 md:p-3 
+                transform transition-all duration-300 
+                hover:scale-110 focus:outline-none"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Mobile Swipe Indicator */}
+        <div className="md:hidden mt-4 flex items-center justify-center space-x-2">
+          <div className="h-2 w-2 bg-white/50 rounded-full"></div>
+          <div className="h-2 w-2 bg-[#2564eb] rounded-full"></div>
+          <div className="h-2 w-2 bg-white/50 rounded-full"></div>
         </div>
       </section>
+      <section ref={ref} className="container mx-auto px-4 py-16 bg-gradient-to-br from-[#f4f7ff] to-[#e6f2ff] overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
+        >
+          <motion.h2 
+            className="text-sm md:text-lg text-blue-600 font-semibold mb-2 tracking-wider uppercase"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            Our Innovative Approach
+          </motion.h2>
+          <motion.h1 
+            className="text-3xl md:text-5xl font-extrabold mb-4 text-[#034067] tracking-tight leading-tight"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 100,
+              viewport: { once: true }
+            }}
+          >
+            Comprehensive Development <br />
+            <span className="text-[#2564eb]">Process Framework</span>
+          </motion.h1>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 200 }}
+            transition={{ 
+              duration: 1, 
+              ease: "easeInOut",
+              viewport: { once: true }
+            }}
+            className="h-1 bg-[#2564eb] mx-auto rounded-full"
+          />
+        </motion.div>
 
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { 
+              opacity: 1, 
+              transition: { 
+                delayChildren: 0.3, 
+                staggerChildren: 0.2 
+              } 
+            }
+          }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+        >
+          {processSteps.map((step, index) => (
+            <ProcessCard 
+              key={step.title} 
+              step={step} 
+              index={index} 
+            />
+          ))}
+        </motion.div>
+      </section>
       <section className="p-8 bg-[#f4f7ff]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -824,70 +828,65 @@ const Home = () => {
           viewport={{ once: true }}
           className="container mx-auto"
         >
-          <motion.h1
-            className="text-5xl font-bold mb-4 text-[#034067] text-center"
-            animate={{
-              scale: [1, 1.05, 1],
-              color: ["#034067", "#2564eb", "#034067"],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-            }}
-          >
-            Our <span className="text-[#2564eb]">Student</span> Projects
-          </motion.h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: 200 }} // 32 * 4 = 128px
-            transition={{
-              duration: 1,
-              ease: "easeInOut",
-            }}
-            className="h-1 bg-[#2564eb]  mx-auto mb-12 rounded-full"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "SMART CAB POINT",
-                image: "https://placehold.co/600x400?text=Yellow+Cab+in+City",
-                description:
-                  "Cab Booking Software - React JS, Node Js, Mongo Db, Express js",
-                tech: ["React", "Node.js", "MongoDB", "Express"],
-              },
-              {
-                title: "SMILE CAFE POINT",
-                image:
-                  "https://placehold.co/600x400?text=Bowl+of+Soup+with+Bread",
-                description:
-                  "Food Ordering Software - React JS, NodeJs, Mongo Db, Express js",
-                tech: ["React", "Node.js", "MongoDB", "Express"],
-              },
-              {
-                title: "ZEPHYR",
-                image:
-                  "https://placehold.co/600x400?text=Person+in+Black+Jacket",
-                description:
-                  "E-Commerce Site - React JS, Node Js, Mongo Db, Express js",
-                tech: ["React", "Node.js", "MongoDB", "Express"],
-              },
-            ].map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.2,
-                  type: "spring",
-                  stiffness: 300,
+            <motion.h1 
+                className="text-5xl font-bold mb-4 text-[#034067] text-center"
+                animate={{
+                    scale: [1, 1.05, 1],
+                    color: ['#034067', '#2564eb', '#034067']
                 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden 
+                transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    ease: 'easeInOut'
+                }}
+            >
+                Our <span className="text-[#2564eb]">Studant</span> Projects
+            </motion.h1>
+            <motion.div 
+                initial={{ width: 0 }}
+                animate={{ width: 200 }}  // 32 * 4 = 128px
+                transition={{ 
+                    duration: 1, 
+                    ease: "easeInOut"
+                }}
+                className="h-1 bg-[#2564eb]  mx-auto mb-12 rounded-full"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                    {
+                        title: "SMART CAB POINT",
+                        image: "https://placehold.co/600x400?text=Yellow+Cab+in+City",
+                        description: "Cab Booking Software - React JS, Node Js, Mongo Db, Express js",
+                        tech: ["React", "Node.js", "MongoDB", "Express"]
+                    },
+                    {
+                        title: "SMILE CAFE POINT",
+                        image: "https://placehold.co/600x400?text=Bowl+of+Soup+with+Bread",
+                        description: "Food Ordering Software - React JS, NodeJs, Mongo Db, Express js",
+                        tech: ["React", "Node.js", "MongoDB", "Express"]
+                    },
+                    {
+                        title: "ZEPHYR",
+                        image: "https://placehold.co/600x400?text=Person+in+Black+Jacket",
+                        description: "E-Commerce Site - React JS, Node Js, Mongo Db, Express js",
+                        tech: ["React", "Node.js", "MongoDB", "Express"]
+                    }
+                ].map((project, index) => (
+                    <motion.div 
+                        key={project.title}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ 
+                            duration: 0.5, 
+                            delay: index * 0.2,
+                            type: "spring",
+                            stiffness: 300
+                        }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-2xl shadow-xl overflow-hidden 
                         border border-[#2564eb]/10 
                         transform transition-all duration-300 
                         hover:shadow-2xl hover:border-[#2564eb]/30"
