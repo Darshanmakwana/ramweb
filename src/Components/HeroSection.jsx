@@ -20,7 +20,7 @@ const HeroSection = () => {
         } else {
           setTimeout(() => {
             isTyping = false;
-            setTimeout(resetText, 1000); 
+            setTimeout(resetText, 1000);
           }, 1000);
         }
       }
@@ -57,17 +57,24 @@ const HeroSection = () => {
             </h1>
             <hr className="border-t-2 border-[#034067] mt-2" />
           </div>
-          <div className="space-y-2">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2564eb75] ">
-              <span className="text-[#034067]">DESIGNS</span> THAT INSPIRE,
+          <div className="space-y-4 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold">
+              <span className="text-[#034067]">MASTER</span>
+              <span className="text-[#2564eb]">{" "}WEB DEVELOPMENT</span>
             </h1>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2564eb75]">
-              <span className="text-[#034067]">FRONTEND</span>
+            <h1 className="text-3xl md:text-5xl font-extrabold">
+              <span className="text-[#034067]">{" "}WITH</span>
+              <span className="text-[#2564eb]">{" "}US</span>
             </h1>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2564eb75]">
-              THAT DELIVER.
+            <h1 className="text-2xl md:text-4xl font-bold text-[#2564eb]">
+              {" "}EASY-TO-FOLLOW <span className="text-[#034067]">{" "}TUTORIALS</span>
             </h1>
+            <p className="text-lg md:text-xl text-gray-600 mt-4">
+              Learn step-by-step and become a professional web developer with
+              tutorials designed for all skill levels.
+            </p>
           </div>
+
           <div className="mt-6 md:mt-8 flex justify-center space-x-4">
             <button className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
               TRAINING
