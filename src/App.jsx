@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
-import OurCourses from "./Pages/OurCourses";
-import CourseDetails from "./Components/CourseDetails";
+import Courses from "./Pages/Courses/Courses";
+import CourseDetails from "./Pages/Courses/CourseDetails";
 import Contect from "./Pages/Contect";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/courses" element={<OurCourses />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route path="/contect" element={<Contect />} />
       </Routes>
