@@ -202,9 +202,46 @@ const BackgroundAnimation = () => {
           {word}
         </motion.div>
       ))}
+      {/* Meteor Rain Animation */}
+      <div className="meteor-rain">
+        {Array.from({ length: 20 }).map((_, index) => (
+          <div key={index} className="meteor"></div>
+        ))}
+      </div>
     </div>
   );
 };
+
+// Add CSS for meteor rain animation
+<style jsx>{`
+  .meteor-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .meteor {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    animation: fall linear infinite;
+    opacity: 0.8;
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+`}</style>
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -820,6 +857,24 @@ const Home = () => {
           ))}
         </motion.div>
       </section>
+      <section className="bg-gradient-to-br from-[#f0f4f8] to-[#e6f2ff] flex md:flex-row flex-col  items-center justify-center h-[600px] w-full overflow-hidden p-8">
+        <h2 className="text-4xl font-extrabold mb-6 text-[#2564eb] text-center animate-bounce">CODECRAFT <span className="text-[#ff760ef5]">UTILITIES</span> </h2>
+        <div className="relative flex items-center justify-center w-full h-full">
+          <div className="absolute w-40 h-40 md:w-60 md:h-60 bg-transparent border-4 border-dotted border-[#034067] rounded-full flex items-center justify-center shadow-lg">
+            <div className="absolute w-24 h-24 md:w-40 md:h-40 bg-[#034067] rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute w-12 h-12 md:w-20 md:h-20 bg-[#ff760ef5] rounded-full flex items-center justify-center shadow-md">
+                <span className="text-[#034067] text-sm md:text-xl text-center font-semibold">Tech-Stack</span>
+              </div>
+            </div>
+          </div>
+          {/* Orbiting Texts with modern styles */}
+          {["HTML", "CSS", "JAVASCRIPT", "REACT.JS", "NODE.JS", "EXPRESS.JS", "MONGODB", "TAILWIND", "BOOTSTRAP"].map((text, index) => (
+            <div className="orbit" style={{ animationDelay: `${(index + 1) * 1.11}s` }} key={index}>
+              <span className="text-sm md:text-lg text-[#2564eb] font-medium transition-transform transform hover:scale-110">{text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
       <section className="p-8 bg-[#f4f7ff]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -841,7 +896,7 @@ const Home = () => {
                     ease: 'easeInOut'
                 }}
             >
-                Our <span className="text-[#2564eb]">Studant</span> Projects
+                Our <span className="text-[#2564eb]">Student</span> Projects
             </motion.h1>
             <motion.div 
                 initial={{ width: 0 }}
