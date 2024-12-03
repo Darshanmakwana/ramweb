@@ -13,9 +13,20 @@ import {
     faShieldAlt,
     faRocket
 } from '@fortawesome/free-solid-svg-icons';
-import gif from "../assets/gif.gif";
+import harsh from '../assets/harsh.jpg'
+import vishva from '../assets/vishva.jpg'
+import yagnik from '../assets/yagnik.jpg'
+import vaibhavi from '../assets/vaibhavi.jpg'
+import nill from '../assets/nill.jpg'
+import mahek from '../assets/mahek.jpg'
+import hiren from '../assets/hiren.jpg'
+import acservice from '../assets/acservice5.jpg'
+import slide from '../assets/slide3.png'
+import kesari from '../assets/kesricafe1.jpg'
+
 import ServiceCards from "../Components/ServiceCards";
 import HeroSection from "../Components/HeroSection";
+import expert from "../assets/Expertise.webp";
 
 const ProcessCard = ({ step, index }) => {
   return (
@@ -112,46 +123,46 @@ const ProcessCard = ({ step, index }) => {
 
 const interns = [
   {
-    name: "Nandani Patel",
-    role: "Full Stack",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Nandani Patel",
+    name: "Harsh Patel",
+    role: "Graphic Designer",
+    image: harsh,
+    alt: "Image of harsh",
   },
   {
-    name: "Nidhi Parmar",
-    role: "Ui/Ux",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Nidhi Parmar",
+    name: "Vishva Kanani",
+    role: "Web Devlopment",
+    image: vishva,
+    alt: "Image of vishva",
   },
   {
-    name: "Kalpesh",
-    role: "React JS",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Kalpesh",
+    name: "Yagnik Sadhu",
+    role: "Web devlopment",
+    image: yagnik,
+    alt: "Image of yagnish",
   },
   {
-    name: "Parth Goswami",
-    role: "React JS",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Parth Goswami",
+    name: "Vaibhavi Chauhan",
+    role: "Web developer",
+    image: vaibhavi,
+    alt: "Image of vaibhavi",
   },
   {
-    name: "Jeel Patel",
-    role: "Data Analysis",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Jeel Patel",
+    name: "Neel patni",
+    role: "Web developer",
+    image: nill,
+    alt: "Image of neel ",
   },
   {
-    name: "Zankhna",
-    role: "React JS",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Zankhna",
+    name: "Mahek soni",
+    role: "Web developer",
+    image: mahek,
+    alt: "Image of mahek",
   },
   {
-    name: "Mohit Prajapati",
-    role: "React Native",
-    image: "https://placehold.co/100x100",
-    alt: "Image of Mohit Prajapati",
+    name: "Hiren Patel",
+    role: "Web Devloper",
+    image: hiren,
+    alt: "Image of hiren",
   },
 ];
 
@@ -496,7 +507,7 @@ const Home = () => {
               ></div>
 
               <motion.img
-                src="https://placehold.co/600x400"
+                src={expert}
                 alt="Illustration of a person analyzing a bar chart with upward trends"
                 className="relative z-10 w-full h-auto rounded-2xl shadow-2xl 
                               transform transition-transform duration-300 
@@ -911,21 +922,21 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                     {
-                        title: "SMART CAB POINT",
-                        image: "https://placehold.co/600x400?text=Yellow+Cab+in+City",
-                        description: "Cab Booking Software - React JS, Node Js, Mongo Db, Express js",
+                        title: "SUPER AC SERVICE AND REPAIRING",
+                        image: acservice,
+                        description: "Ac Service And Repairing - React JS,  Mongo Db, Express js",
+                        tech: ["React", "MongoDB", "Express"]
+                    },
+                    {
+                        title: "YOGESHWAR FIBRE",
+                        image: slide,
+                        description: "Fabrication Works - React JS, NodeJs, Mongo Db, Express js",
                         tech: ["React", "Node.js", "MongoDB", "Express"]
                     },
                     {
-                        title: "SMILE CAFE POINT",
-                        image: "https://placehold.co/600x400?text=Bowl+of+Soup+with+Bread",
-                        description: "Food Ordering Software - React JS, NodeJs, Mongo Db, Express js",
-                        tech: ["React", "Node.js", "MongoDB", "Express"]
-                    },
-                    {
-                        title: "ZEPHYR",
-                        image: "https://placehold.co/600x400?text=Person+in+Black+Jacket",
-                        description: "E-Commerce Site - React JS, Node Js, Mongo Db, Express js",
+                        title: "KESARI CAFE",
+                        image: kesari,
+                        description: "portfolio - React JS, Node Js, Mongo Db, Express js",
                         tech: ["React", "Node.js", "MongoDB", "Express"]
                     }
                 ].map((project, index) => (

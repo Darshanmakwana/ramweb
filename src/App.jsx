@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import Courses from "./Pages/Courses/Courses";
 import CourseDetails from "./Pages/Courses/CourseDetails";
 import Contect from "./Pages/Contect";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route path="/contect" element={<Contect />} />
       </Routes>
+      <Footer/>
     </>
   );
 };
