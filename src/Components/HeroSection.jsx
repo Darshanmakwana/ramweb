@@ -60,14 +60,15 @@ const HeroSection = () => {
           <div className="space-y-4 text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold">
               <span className="text-[#034067]">MASTER</span>
-              <span className="text-[#2564eb]">{" "}WEB DEVELOPMENT</span>
+              <span className="text-[#2564eb]"> WEB DEVELOPMENT</span>
             </h1>
             <h1 className="text-3xl md:text-5xl font-extrabold">
-              <span className="text-[#034067]">{" "}WITH</span>
-              <span className="text-[#2564eb]">{" "}US</span>
+              <span className="text-[#034067]"> WITH</span>
+              <span className="text-[#2564eb]"> US</span>
             </h1>
             <h1 className="text-2xl md:text-4xl font-bold text-[#2564eb]">
-              {" "}EASY-TO-FOLLOW <span className="text-[#034067]">{" "}TUTORIALS</span>
+              {" "}
+              EASY-TO-FOLLOW <span className="text-[#034067]"> TUTORIALS</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mt-4">
               Learn step-by-step and become a professional web developer with

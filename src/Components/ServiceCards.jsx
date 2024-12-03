@@ -9,7 +9,6 @@ import {
   FaChartLine 
 } from "react-icons/fa";
 
-// Custom theme colors
 const THEME_COLORS = {
   primary: '#ffff',     
   secondary: '#0000',   

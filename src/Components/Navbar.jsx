@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="relative">
       {/* Desktop Navbar */}
-      <div className="flex items-center justify-between px-4 md:px-10 bg-white border-b border-gray-200 relative z-20 fixed">
+      <div className="flex items-center justify-between px-4 md:px-10 bg-white border-b border-gray-200 relative z-20">
         <div className="flex items-center space-x-2">
           <Link to="/">
             <img src={logo} alt="Company-logo" className="h-24 w-28" />

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaCode, FaServer, FaLayerGroup, FaPencilRuler } from "react-icons/fa";
 
-const OurCourses = () => {
+const Courses = () => {
   const courses = [
     {
       id: "frontend",
@@ -49,11 +49,10 @@ const OurCourses = () => {
             </h2>
             <p className="text-gray-600 text-center">{course.description}</p>
             <div className="flex justify-center mt-4">
-              <Link
-                to={`/courses/${course.id}`}
-                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition"
-              >
-                Start Learning
+              <Link to={`/courses/${course.id}`}>
+                <div className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition">
+                  Start Learning
+                </div>
               </Link>
             </div>
           </div>
@@ -63,4 +62,4 @@ const OurCourses = () => {
   );
 };
 
-export default OurCourses;
+export default Courses;
