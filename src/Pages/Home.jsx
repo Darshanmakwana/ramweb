@@ -748,11 +748,7 @@ const Home = () => {
                         w-16 h-16 md:w-24 md:h-24 object-cover 
                         transform transition-transform hover:scale-110"
                     />
-                    <div className="absolute bottom-0 right-0 bg-[#2564eb] text-white 
-                      rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center 
-                      text-xs md:text-sm font-bold">
-                      {index + 1}
-                    </div>
+                    
                   </div>
                   <p className="mt-2 font-semibold text-white text-center text-xs md:text-sm">
                     {intern.name}

@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-import logo from "../assets/logo1.png";
+import logo from "../assets/RWSlogo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between px-4 md:px-10 bg-white border-b border-gray-200 relative z-20">
         <div className="flex items-center space-x-2">
           <Link to="/">
-            <img src={logo} alt="Company-logo" className="h-24 w-28" />
+            <img src={logo} alt="Company-logo" className="h-28 w-32" />
           </Link>
         </div>
 

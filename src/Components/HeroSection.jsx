@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import gif from "../assets/gif.gif";
+import { IoCallOutline } from "react-icons/io5";
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
@@ -77,12 +78,16 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-6 md:mt-8 flex justify-center space-x-4">
-            <button className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
+            <a  href="tel:9998048275" className="flex items-center justify-center p-3 bg-[#2564eb] rounded-full border border-black">
+
+            <IoCallOutline/>
+            </a>
+            {/* <button className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
               TRAINING
             </button>
             <button className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
               INTERNSHIP
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
