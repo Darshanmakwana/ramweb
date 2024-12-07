@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing framer-motion for animations
-import logo from "../assets/logo1.png"; // Import your logo image
+
 
 const Footer = () => {
   return (
