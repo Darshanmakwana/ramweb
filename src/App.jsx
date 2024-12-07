@@ -7,6 +7,7 @@ import CourseDetails from "./Pages/Courses/CourseDetails";
 import Contect from "./Pages/Contect";
 import Footer from "./Components/Footer";
 import About from "./Pages/About";
+import FloatingContactoIcons from "./Components/FloatingContactoIcons";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/contect" element={<Contect />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <FloatingContactoIcons/>
       <Footer/>
     </>
   );
