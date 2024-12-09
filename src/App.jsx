@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:courseId" element={<CourseDetails />} />
-        <Route path="/contect" element={<Contect />} />
+        <Route path="/contact" element={<Contect />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <FloatingContactoIcons/>

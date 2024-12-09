@@ -61,7 +61,8 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-blue-500 text-3xl" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Address</h3>
-                  <p className="text-gray-500">123 Tech Innovation Street, Silicon Valley</p>
+                  <p className="text-gray-500">K10 Atlantis, C tower, Near Genda Circle, Sara
+                  Bhai Campus, Opp Honest Restaurant, Vadodara, Gujarat – 390007</p>
                 </div>
               </div>
 
@@ -70,7 +71,7 @@ const Contact = () => {
                 <FaEnvelope className="text-green-500 text-3xl" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Email</h3>
-                  <p className="text-gray-500">contact@innovate.com</p>
+                  <a  href="https://wa.me/919998048275" className="text-gray-500">sales@ramwebsolution.com</a>
                 </div>
               </div>
 
@@ -79,7 +80,7 @@ const Contact = () => {
                 <FaPhone className="text-purple-500 text-3xl" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Phone</h3>
-                  <p className="text-gray-500">+1 (555) 123-4567</p>
+                  <a href='tel:919998048275' className="text-gray-500">9998048275</a>
                 </div>
               </div>
             </div>

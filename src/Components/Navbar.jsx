@@ -50,7 +50,7 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-2">
             <FontAwesomeIcon icon={faPhone} className="text-[#034067]" />
-            <Link to="/contect">
+            <Link to="/contact">
               <span className="font-semibold text-[#034067] hover:cursor-pointer">
                 CONTACT
               </span>

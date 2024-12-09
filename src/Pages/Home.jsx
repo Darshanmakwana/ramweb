@@ -28,6 +28,7 @@ import ServiceCards from "../Components/ServiceCards";
 import HeroSection from "../Components/HeroSection";
 import expert from "../assets/Expertise.webp";
 import TechStackOverview from "../Components/TechStackOverview";
+import { Link } from "react-router-dom";
 
 const ProcessCard = ({ step, index }) => {
   return (
@@ -447,14 +448,14 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-12">
-            <a
-              href="#"
+            <Link
+              to="/courses"
               className="inline-block px-8 py-3 bg-white border-2 border-[#034067]  text-[#034067] font-bold rounded-full 
               transition duration-300 ease-in-out 
               hover:bg-[#034067] hover:text-white"
             >
               Apply Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -659,7 +660,7 @@ const Home = () => {
                               flex items-center space-x-3 
                               shadow-2xl hover:shadow-xl"
                 >
-                  <span>Learn More</span>
+                  <Link to="/about" ><span>Learn More</span></Link>
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     className="transition-transform group-hover:translate-x-1"

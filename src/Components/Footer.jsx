@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Importing framer-motion for animations
-
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -26,11 +26,12 @@ const Footer = () => {
           >
             <h2 className="font-bold mb-2 text-lg">Services</h2>
             <hr className="mb-2" />
-            <ul>
-              <li className="mb-2">Web Development</li>
-              <li className="mb-2">Web Design</li>
-              <li className="mb-2">Digital Marketing</li>
-            </ul>
+            <div className="flex flex-col">
+
+              <Link to="/courses"   className="mb-2 ">Web Development</Link>
+              <Link to="/courses"   className="mb-2">Web Design</Link>
+              <Link to="/courses"   className="mb-2">Digital Marketing</Link>
+            </div>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -40,13 +41,13 @@ const Footer = () => {
             <hr className="mb-2" />
             <ul>
               <li className="mb-2">
-                <a href="about-page.html">About</a>
+                <Link to="/about" >About</Link>
               </li>
               <li className="mb-2">
-                <a href="contact-page.html">Contact</a>
+                <Link to="/contact" >Contact</Link>
               </li>
               <li className="mb-2">
-                <a href="courses.html">Courses</a>
+                <Link to="/courses" >Courses</Link>
               </li>
             </ul>
           </motion.div>
