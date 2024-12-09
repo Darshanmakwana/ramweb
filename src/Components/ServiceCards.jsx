@@ -66,16 +66,7 @@ const ServiceCard = ({ title, description, Icon }) => {
             >
               <h3 className="text-2xl font-bold mb-4">{title}</h3>
               <p className="leading-relaxed">{description}</p>
-              <motion.button 
-                whileHover={{ scale: 1.1 }}
-                className="mt-6 px-6 py-2 rounded-full font-semibold transition"
-                style={{ 
-                  backgroundColor: THEME_COLORS.background,
-                  color: THEME_COLORS.accent 
-                }}
-              >
-                Learn More
-              </motion.button>
+             
             </motion.div>
           )}
         </AnimatePresence>

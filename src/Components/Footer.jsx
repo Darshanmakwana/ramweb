@@ -58,7 +58,7 @@ const Footer = () => {
             <h2 className="font-bold mb-2 text-lg">Address</h2>
             <hr className="mb-2" />
             <address className="mb-2">
-             K10 Atlantis, C tower, Near Genda Circle, Sara
+          Genda Circle, Sara
               Bhai Campus, Opp Honest Restaurant, Vadodara, Gujarat – 390007
             </address>
             <a href="tel:9998048275" className="mb-2">

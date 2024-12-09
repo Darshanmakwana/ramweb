@@ -31,27 +31,27 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex items-center space-x-2">
-            <FontAwesomeIcon icon={faHandshake} className="text-[#034067]" />
+            {/* <FontAwesomeIcon icon={faHandshake} className="text-[#034067]" /> */}
             <Link to="/courses">
-              <span className="font-semibold text-[#034067] hover:cursor-pointer">
+              <span className="font-extrabold text-[#034067] hover:cursor-pointer">
                 OUR COURSES
               </span>
             </Link>
           </div>
 
           <div className="flex items-center space-x-2">
-            <FontAwesomeIcon icon={faUser} className="text-[#034067]" />
+            {/* <FontAwesomeIcon icon={faUser} className="text-[#034067]" /> */}
             <Link to="/about">
-              <span className="font-semibold text-[#034067] hover:cursor-pointer">
+              <span className="font-extrabold text-[#034067] hover:cursor-pointer">
                 ABOUT US
               </span>
             </Link>
           </div>
 
           <div className="flex items-center space-x-2">
-            <FontAwesomeIcon icon={faPhone} className="text-[#034067]" />
+            {/* <FontAwesomeIcon icon={faPhone} className="text-[#034067]" /> */}
             <Link to="/contact">
-              <span className="font-semibold text-[#034067] hover:cursor-pointer">
+              <span className=" text-[#034067] font-extrabold hover:cursor-pointer">
                 CONTACT
               </span>
             </Link>

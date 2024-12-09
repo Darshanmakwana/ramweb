@@ -26,11 +26,32 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Add your form submission logic here
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
+    
+    // Web3Forms API submission
+    const formDataToSend = new FormData();
+    formDataToSend.append('access_key', '373fa754-1f0e-438a-aadd-40f3ad11e314');
+    formDataToSend.append('subject', 'New Contact Form Submission from Web3Forms');
+    formDataToSend.append('from_name', 'My Website');
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('message', formData.message);
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Reset form after successful submission
+        setFormData({
+            name: '',
+            email: '',
+            message: ''
+        });
+    })
+    .catch((error) => {
+        console.error('Error:', error);
     });
   };
 
@@ -61,7 +82,7 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-blue-500 text-3xl" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Address</h3>
-                  <p className="text-gray-500">K10 Atlantis, C tower, Near Genda Circle, Sara
+                  <p className="text-gray-500"> Genda Circle, Sara
                   Bhai Campus, Opp Honest Restaurant, Vadodara, Gujarat – 390007</p>
                 </div>
               </div>

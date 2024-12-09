@@ -888,7 +888,7 @@ const Home = () => {
                     ease: 'easeInOut'
                 }}
             >
-                Our <span className="text-[#2564eb]">Student</span> Projects
+                Our <span className="text-[#2564eb]">Portfolio</span> 
             </motion.h1>
             <motion.div 
                 initial={{ width: 0 }}
