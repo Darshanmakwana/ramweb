@@ -977,6 +977,17 @@ const Home = () => {
             ))}
           </div>
         </motion.div>
+        {/* New Button for More Portfolio Projects */}
+        <div className="text-center mt-8">
+          <Link
+            to="/portfolio"
+            className="inline-block px-8 py-3 border-2 border-[#034067] text-blue-500 font-bold rounded-full 
+            transition duration-300 ease-in-out 
+            hover:bg-[#034067]"
+          >
+            More Portfolio Projects
+          </Link>
+        </div>
       </section>
     </>
   );

@@ -49,6 +49,16 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-2">
+            {/* <FontAwesomeIcon icon={faUser} className="text-[#034067]" /> */}
+            <Link to="/portfolio">
+              <span className="font-extrabold text-[#034067] hover:cursor-pointer">
+                PORTFOLIO
+              </span>
+            </Link>
+          </div>
+          
+
+          <div className="flex items-center space-x-2">
             {/* <FontAwesomeIcon icon={faPhone} className="text-[#034067]" /> */}
             <Link to="/contact">
               <span className=" text-[#034067] font-extrabold hover:cursor-pointer">
@@ -89,20 +99,20 @@ const Navbar = () => {
               <div className="text-center">
                 <img src={logo} alt="Company Logo" className="h-24 w-28" />
               </div>
-              <div className="flex items-center space-x-2">
+              <Link to="/courses" className="flex items-center space-x-2" onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faHandshake} />
                 <span className="font-semibold">OUR COURSES</span>
-              </div>
+              </Link>
 
-              <div className="flex items-center space-x-2">
+              <Link to="/about" className="flex items-center space-x-2" onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faUser} />
                 <span className="font-semibold">ABOUT US</span>
-              </div>
+              </Link>
 
-              <div className="flex items-center space-x-2">
+              <Link to="/contact" className="flex items-center space-x-2" onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faPhone} />
                 <span className="font-semibold">CONTACT</span>
-              </div>
+              </Link>
             </div>
           </div>
         </>
