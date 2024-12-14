@@ -1,28 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faUsersCog, 
-    faHeadset, 
-    faPaintBrush, 
-    faChartLine, 
-    faArrowRight,
-    faClipboardList,
-    faCogs,
-    faLaptopCode,
-    faShieldAlt,
-    faRocket
-} from '@fortawesome/free-solid-svg-icons';
-import harsh from '../assets/harsh.jpg'
-import vishva from '../assets/vishva.jpg'
-import yagnik from '../assets/yagnik.jpg'
-import vaibhavi from '../assets/vaibhavi.jpg'
-import nill from '../assets/nill.jpg'
-import mahek from '../assets/mahek.jpg'
-import hiren from '../assets/hiren.jpg'
-import acservice from '../assets/acservice5.jpg'
-import slide from '../assets/slide3.png'
-import kesari from '../assets/kesricafe1.jpg'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUsersCog,
+  faHeadset,
+  faPaintBrush,
+  faChartLine,
+  faArrowRight,
+  faClipboardList,
+  faCogs,
+  faLaptopCode,
+  faShieldAlt,
+  faRocket,
+} from "@fortawesome/free-solid-svg-icons";
+import harsh from "../assets/harsh.jpg";
+import vishva from "../assets/vishva.jpg";
+import yagnik from "../assets/yagnik.jpg";
+import vaibhavi from "../assets/vaibhavi.jpg";
+import nill from "../assets/nill.jpg";
+import mahek from "../assets/mahek.jpg";
+import hiren from "../assets/hiren.jpg";
+import acservice from "../assets/acservice5.jpg";
+import slide from "../assets/slide3.png";
+import kesari from "../assets/kesricafe1.jpg";
 
 import ServiceCards from "../Components/ServiceCards";
 import HeroSection from "../Components/HeroSection";
@@ -71,8 +71,8 @@ const ProcessCard = ({ step, index }) => {
       {/* Header */}
       <div className="relative z-10 space-y-3">
         <div className="flex items-center space-x-4">
-          <FontAwesomeIcon 
-            icon={step.icon} 
+          <FontAwesomeIcon
+            icon={step.icon}
             className="text-3xl md:text-4xl text-white/80"
           ></FontAwesomeIcon>
           <h3 className="text-xl md:text-2xl font-bold tracking-tight">
@@ -254,7 +254,7 @@ const BackgroundAnimation = () => {
       opacity: 0;
     }
   }
-`}</style>
+`}</style>;
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -660,7 +660,9 @@ const Home = () => {
                               flex items-center space-x-3 
                               shadow-2xl hover:shadow-xl"
                 >
-                  <Link to="/about" ><span>Learn More</span></Link>
+                  <Link to="/about">
+                    <span>Learn More</span>
+                  </Link>
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     className="transition-transform group-hover:translate-x-1"
@@ -717,40 +719,46 @@ const Home = () => {
         <BackgroundAnimation />
       </section>
       <section className="flex flex-col items-center py-12 bg-[#034067] relative overflow-hidden px-4">
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-3 text-[#2564eb] relative z-10 text-center"> 
-          <span className="text-white">Our students are completing </span> internship 
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-3 text-[#2564eb] relative z-10 text-center">
+          <span className="text-white">Our students are completing </span>{" "}
+          internship
         </h1>
         <div className="h-1 w-24 md:w-96 mb-12 bg-[#2564eb] mx-auto rounded-full relative z-10"></div>
-        
+
         <div className="relative w-full max-w-5xl z-20">
           <div className="flex justify-center items-center relative">
             <div className="grid grid-cols-3 md:grid-cols-5 gap-4 md:gap-20 relative">
               {getVisibleInterns().map((intern, index) => (
-                <motion.div 
-                  key={intern.name} 
+                <motion.div
+                  key={intern.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
+                  transition={{
                     delay: index * 0.1,
                     type: "spring",
-                    stiffness: 300
+                    stiffness: 300,
                   }}
                   className={`flex flex-col items-center transition-all duration-500 ease-in-out
-                    ${index === 0 ? 'opacity-100 scale-100 z-10' : 
-                      index === 1 ? 'opacity-75 scale-90 md:-translate-x-4 z-0' : 
-                      index === 2 ? 'opacity-50 scale-80 md:-translate-x-8 z-0' : 
-                      index === 3 ? 'opacity-25 scale-80 md:-translate-x-8 z-0' :
-                      'opacity-25 scale-70 md:-translate-x-12 z-0'}`}
+                    ${
+                      index === 0
+                        ? "opacity-100 scale-100 z-10"
+                        : index === 1
+                        ? "opacity-75 scale-90 md:-translate-x-4 z-0"
+                        : index === 2
+                        ? "opacity-50 scale-80 md:-translate-x-8 z-0"
+                        : index === 3
+                        ? "opacity-25 scale-80 md:-translate-x-8 z-0"
+                        : "opacity-25 scale-70 md:-translate-x-12 z-0"
+                    }`}
                 >
                   <div className="relative">
-                    <img 
-                      src={intern.image} 
-                      alt={intern.alt} 
+                    <img
+                      src={intern.image}
+                      alt={intern.alt}
                       className="rounded-full border-2 border-[#2564eb] 
                         w-16 h-16 md:w-24 md:h-24 object-cover 
                         transform transition-transform hover:scale-110"
                     />
-                    
                   </div>
                   <p className="mt-2 font-semibold text-white text-center text-xs md:text-sm">
                     {intern.name}
@@ -762,32 +770,54 @@ const Home = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Responsive Navigation Buttons */}
           <div className="absolute inset-y-0 flex items-center justify-between w-full">
-            <motion.button 
-              onClick={prevSlide} 
+            <motion.button
+              onClick={prevSlide}
               whileTap={{ scale: 0.9 }}
               className="hidden md:block bg-white/20 hover:bg-white/40 
                 text-white rounded-full p-2 md:p-3 
                 transform transition-all duration-300 
                 hover:scale-110 focus:outline-none"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </motion.button>
-            
-            <motion.button 
-              onClick={nextSlide} 
+
+            <motion.button
+              onClick={nextSlide}
               whileTap={{ scale: 0.9 }}
               className="hidden md:block bg-white/20 hover:bg-white/40 
                 text-white rounded-full p-2 md:p-3 
                 transform transition-all duration-300 
                 hover:scale-110 focus:outline-none"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </motion.button>
           </div>
@@ -800,7 +830,10 @@ const Home = () => {
           <div className="h-2 w-2 bg-white/50 rounded-full"></div>
         </div>
       </section>
-      <section ref={ref} className="container mx-auto px-4 py-16 bg-gradient-to-br from-[#f4f7ff] to-[#e6f2ff] overflow-hidden">
+      <section
+        ref={ref}
+        className="container mx-auto px-4 py-16 bg-gradient-to-br from-[#f4f7ff] to-[#e6f2ff] overflow-hidden"
+      >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -808,7 +841,7 @@ const Home = () => {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <motion.h2 
+          <motion.h2
             className="text-sm md:text-lg text-blue-600 font-semibold mb-2 tracking-wider uppercase"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -816,57 +849,53 @@ const Home = () => {
           >
             Our Innovative Approach
           </motion.h2>
-          <motion.h1 
+          <motion.h1
             className="text-3xl md:text-5xl font-extrabold mb-4 text-[#034067] tracking-tight leading-tight"
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ 
-              type: "spring", 
+            transition={{
+              type: "spring",
               stiffness: 100,
-              viewport: { once: true }
+              viewport: { once: true },
             }}
           >
             Comprehensive Development <br />
             <span className="text-[#2564eb]">Process Framework</span>
           </motion.h1>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 200 }}
-            transition={{ 
-              duration: 1, 
+            transition={{
+              duration: 1,
               ease: "easeInOut",
-              viewport: { once: true }
+              viewport: { once: true },
             }}
             className="h-1 bg-[#2564eb] mx-auto rounded-full"
           />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={{
             hidden: { opacity: 0 },
-            visible: { 
-              opacity: 1, 
-              transition: { 
-                delayChildren: 0.3, 
-                staggerChildren: 0.2 
-              } 
-            }
+            visible: {
+              opacity: 1,
+              transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+              },
+            },
           }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
         >
           {processSteps.map((step, index) => (
-            <ProcessCard 
-              key={step.title} 
-              step={step} 
-              index={index} 
-            />
+            <ProcessCard key={step.title} step={step} index={index} />
           ))}
         </motion.div>
       </section>
-     <TechStackOverview/>
+      <TechStackOverview />
       <section className="p-8 bg-[#f4f7ff]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -875,92 +904,88 @@ const Home = () => {
           viewport={{ once: true }}
           className="container mx-auto"
         >
-            <motion.h1 
-                className="text-5xl font-bold mb-4 text-[#034067] text-center"
-                animate={{
-                    scale: [1, 1.05, 1],
-                    color: ['#034067', '#2564eb', '#034067']
-                }}
+          <motion.h1
+            className="text-5xl font-bold mb-4 text-[#034067] text-center"
+            animate={{
+              scale: [1, 1.05, 1],
+              color: ["#034067", "#2564eb", "#034067"],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+          >
+            Our <span className="text-[#2564eb]">Portfolio</span>
+          </motion.h1>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 200 }} // 32 * 4 = 128px
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
+            }}
+            className="h-1 bg-[#2564eb]  mx-auto mb-12 rounded-full"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "SUPER AC SERVICE AND REPAIRING",
+                image: acservice,
+                link: "superacserviceandrepairing.com",
+                description:
+                  "Ac Service And Repairing - React JS,  Mongo Db, Express js",
+                tech: ["React", "MongoDB", "Express"],
+              },
+              {
+                title: "YOGESHWAR FIBRE",
+                image: slide,
+                link: "yogeshwarfibre.com",
+                description:
+                  "Fabrication Works - React JS, NodeJs, Mongo Db, Express js",
+                tech: ["React", "Node.js", "MongoDB", "Express"],
+              },
+              {
+                title: "KESARI CAFE",
+                image: kesari,
+                link: "kesaricafe.com",
+                description:
+                  "portfolio - React JS, Node Js, Mongo Db, Express js",
+                tech: ["React", "Node.js", "MongoDB", "Express"],
+              },
+            ].map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: 'loop',
-                    ease: 'easeInOut'
+                  duration: 0.5,
+                  delay: index * 0.2,
+                  type: "spring",
+                  stiffness: 300,
                 }}
-            >
-                Our <span className="text-[#2564eb]">Portfolio</span> 
-            </motion.h1>
-            <motion.div 
-                initial={{ width: 0 }}
-                animate={{ width: 200 }}  // 32 * 4 = 128px
-                transition={{ 
-                    duration: 1, 
-                    ease: "easeInOut"
-                }}
-                className="h-1 bg-[#2564eb]  mx-auto mb-12 rounded-full"
-            />
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                    {
-                        title: "SUPER AC SERVICE AND REPAIRING",
-                        image: acservice,
-                        description: "Ac Service And Repairing - React JS,  Mongo Db, Express js",
-                        tech: ["React", "MongoDB", "Express"]
-                    },
-                    {
-                        title: "YOGESHWAR FIBRE",
-                        image: slide,
-                        description: "Fabrication Works - React JS, NodeJs, Mongo Db, Express js",
-                        tech: ["React", "Node.js", "MongoDB", "Express"]
-                    },
-                    {
-                        title: "KESARI CAFE",
-                        image: kesari,
-                        description: "portfolio - React JS, Node Js, Mongo Db, Express js",
-                        tech: ["React", "Node.js", "MongoDB", "Express"]
-                    }
-                ].map((project, index) => (
-                    <motion.div 
-                        key={project.title}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ 
-                            duration: 0.5, 
-                            delay: index * 0.2,
-                            type: "spring",
-                            stiffness: 300
-                        }}
-                        viewport={{ once: true }}
-                        className="bg-white rounded-2xl shadow-xl overflow-hidden 
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden 
                         border border-[#2564eb]/10 
                         transform transition-all duration-300 
                         hover:shadow-2xl hover:border-[#2564eb]/30"
+                onClick={() => window.open(`https://${project.link}`, "_blank")}
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div
-                    className="absolute inset-0 bg-[#034067]/70 
-                                flex items-center justify-center 
-                                opacity-0 hover:opacity-100 
-                                transition-opacity duration-300"
-                  >
-                    <span className="text-white text-2xl font-bold">
-                      {project.title}
-                    </span>
-                  </div>
                 </div>
 
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-3 text-[#034067]">
+                  <h2 className="text-base font-bold mb-3 text-[#034067]">
                     {project.title}
                   </h2>
-                  <p className="text-[#2564eb] mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
@@ -972,6 +997,7 @@ const Home = () => {
                       </span>
                     ))}
                   </div>
+                  <h1 className="text-[#2564eb] mb-4 font-semibold">{project.link}</h1>
                 </div>
               </motion.div>
             ))}
