@@ -29,6 +29,7 @@ import HeroSection from "../Components/HeroSection";
 import expert from "../assets/Expertise.webp";
 import TechStackOverview from "../Components/TechStackOverview";
 import { Link } from "react-router-dom";
+import Colleges from "../Components/Colleges";
 
 const ProcessCard = ({ step, index }) => {
   return (
@@ -896,6 +897,7 @@ const Home = () => {
         </motion.div>
       </section>
       <TechStackOverview />
+      <Colleges/>
       <section className="p-8 bg-[#f4f7ff]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
