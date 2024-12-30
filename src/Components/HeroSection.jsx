@@ -7,6 +7,7 @@ const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "RAM WEB SOLUTION";
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
@@ -90,7 +91,7 @@ const HeroSection = () => {
         <div className="mb-8 md:mb-0 flex justify-center">
           <img
             src={gif}
-            alt="Pentagon shapes"
+            alt="Technology Innovation"
             className="h-[40vh] md:h-[60vh] max-w-full object-contain"
           />
         </div>
@@ -103,50 +104,50 @@ const HeroSection = () => {
           </div>
           <div className="space-y-4 text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold">
-              <span className="text-[#034067]">MASTER</span>
-              <span className="text-[#2564eb]"> WEB DEVELOPMENT</span>
+              <span className="text-[#034067]">INNOVATIVE</span>
+              <span className="text-[#2564eb]"> DIGITAL SOLUTIONS</span>
             </h1>
             <h1 className="text-3xl md:text-5xl font-extrabold">
-              <span className="text-[#034067]"> WITH</span>
-              <span className="text-[#2564eb]"> US</span>
+              <span className="text-[#034067]"> FOR</span>
+              <span className="text-[#2564eb]"> YOUR BUSINESS</span>
             </h1>
             <h1 className="text-2xl md:text-4xl font-bold text-[#2564eb]">
               {" "}
-              EASY-TO-FOLLOW <span className="text-[#034067]"> TUTORIALS</span>
+              TRANSFORMING <span className="text-[#034067]"> IDEAS INTO REALITY</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mt-4">
-              Learn step-by-step and become a professional web developer with
-              tutorials designed for all skill levels.
+              Empowering businesses with cutting-edge technology solutions and 
+              innovative digital strategies for sustainable growth.
             </p>
           </div>
 
           <div className="mt-6 md:mt-8 flex justify-center space-x-4">
             <button onClick={openModal} className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
-              TRAINING
+              GET STARTED
             </button>
             <button onClick={openModal} className="px-4 py-2 md:px-6 md:py-2 border-2 border-[#034067] text-blue-500 rounded-full hover:bg-[#034067] hover:text-white transition text-sm md:text-base">
-              INTERNSHIP
+              CONTACT US
             </button>
           </div>
 
           <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="modal max-w-sm mx-auto">
-            <h2 className="text-2xl font-bold mt-36 mb-4">Contact Us</h2>
+            <h2 className="text-2xl font-bold mt-36 mb-4">Request a Consultation</h2>
             <form onSubmit={handleSubmit} className="flex flex-col space-y-4 bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-lg shadow-lg">
               <label className="flex flex-col">
-                Name:
+                Full Name:
                 <input type="text" name="name" required className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-300" />
               </label>
               <label className="flex flex-col">
-                Phone Number:
+                Contact Number:
                 <input type="tel" name="phone" required className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-300" />
               </label>
               <label className="flex flex-col">
-                Email:
+                Business Email:
                 <input type="email" name="email" required className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-300" />
               </label>
               
               <div className="flex justify-between">
-                <button type="submit" className="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition">Submit</button>
+                <button type="submit" className="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition">Submit Request</button>
                 <button type="button" onClick={closeModal} className="border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 transition">Close</button>
               </div>
             </form>

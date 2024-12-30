@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaCode, FaServer, FaLayerGroup, FaPencilRuler } from "react-icons/fa";
+import Star from "../../Components/Star";
+import Colleges from "../../Components/Colleges";
+
 
 const Courses = () => {
   const courses = [
@@ -31,6 +34,7 @@ const Courses = () => {
   ];
 
   return (
+    <section>
     <div className="flex flex-col min-h-screen bg-gradient-to-r from-gray-50 to-blue-50">
       <div className="flex items-center justify-center">
         <h1 className="text-gray-800 font-bold text-3xl md:text-4xl p-8">
@@ -59,6 +63,10 @@ const Courses = () => {
         ))}
       </div>
     </div>
+  <Star/>
+  
+  <Colleges/>
+    </section>
   );
 };
 
